@@ -44,6 +44,14 @@ $('#chat form').submit(function(e) {
 socket.on('receiveMessage', function (message) {
 
     $('#messages').append('<li><p><span class="author">'+message.username+': </span> '+message.content+'</p></li>');
+    var heightToScroll = parseFloat($('#messages').css('height')),
+        wrapperHeight = parseFloat($('#messageWrapper').css('height'));
+
+    if (heightToScroll > wrapperHeight) {
+
+        $('#messageWrapper').animate({ scrollTop: heightToScroll }, 1)
+    
+    }
 
 });
 
