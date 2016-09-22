@@ -13,29 +13,47 @@ io.on('connection', function(socket){
 
     var loggedUser;
 
-    //CONNECTION
+    //CONNECT
     socket.on('connectionLogin', function (user) {
+
         loggedUser = user;
         var messageToSend = {
-            username: 'SALON',
-            content: 'Un nouvel utilisateur a rejoint le salon : ' + user.username
-        };
-        socket.broadcast.emit('receiveMessage', messageToSend);
-    });
-    //----------
 
-    socket.on('disconnect', function(){
-        console.log('user disconnected');
+            username: 'INFO',
+            content: 'Un nouvel utilisateur a rejoint le salon : ' + user.username
+
+        };
+        socket.broadcast.emit('receiveInfoMessage', messageToSend);
+
     });
+    //________
+
+    //DISCONNECT
+    socket.on('disconnect', function(){
+
+        var messageToSend = {
+
+            username: 'INFO',
+            content: 'Un utilisateur a quitté le salon'
+
+        };
+        socket.broadcast.emit('receiveInfoMessage', messageToSend);
+
+    });
+    //__________
 
 
     //MESSAGES
     socket.on('sendMessage', function (receivedMessage) {
+
         var messageToSend = {
+
             username: loggedUser.username,
             content: receivedMessage.content
+
         }
         io.emit('receiveMessage', messageToSend);
+
     });
     //--------
 
