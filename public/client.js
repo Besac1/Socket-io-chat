@@ -13,7 +13,7 @@ $('#connection form').submit(function (e) {
 
         socket.emit('connectionLogin', user);
         $('#connection').remove();
-        $('#mainpage').style.display = 'block';
+        $('#mainpage').css('display', 'block');
     
     }
 
