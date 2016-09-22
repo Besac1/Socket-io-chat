@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat socket io</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="mainpage">
+        <h1>Super chat</h1>
+        <div id="chat">
+            <ul id="messages"></ul>
+            <form action="">
+                <input id="messageContent" autocomplete="off" placeholder="Message" />
+                <button>Send</button>
+            </form>
+        </div>
+    </section>
+    <section id="connection">
+        <form action="">
+            <label for="uername">Username</label>
+            <input id="username" autocomplete="off" autofocus />
+            <input type="submit" value="Send" name="submit" />
+      </form>
+    </section>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
