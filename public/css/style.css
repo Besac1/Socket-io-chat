@@ -1,0 +1,136 @@
+html {
+    height: 100%,
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    background-color: #FBFDFD;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    color: #000;
+    font-size: 1rem;
+    font-family: consolas, sans-serif;
+}
+
+section#page {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    color: black;
+    font-size: 1.2rem;
+}
+
+section#page div#container {
+    padding: 0 25px;
+    display: block;
+    height: 95%;
+}
+
+section#page div#header {
+    height: 5%;
+    width: 100%;
+    display: block;
+    color: white;
+    background: #4686CC;
+    background: -webkit-linear-gradient(#4686CC, #119EFD); 
+    background: -o-linear-gradient(#4686CC, #119EFD); 
+    background: -moz-linear-gradient(#4686CC, #119EFD);
+    background: linear-gradient(#4686CC, #119EFD);
+}
+
+
+section#page div#header h1 {
+    font-size: 2rem;
+    padding: 0;
+    display: block;
+    width: 25%;
+    text-align: center;
+    margin: auto;
+}
+
+#mainpage ul {
+    margin: 0;
+    padding: 0;
+}
+
+#mainpage {
+    display: none;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#chat {
+    display: block;
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#chat form {
+    height: 3.75%;
+}
+
+#messageContent {
+    width: 99.8%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    border: 1px solid black;
+    height: 100%;
+}
+
+#messageWrapper {
+    overflow-y: auto;
+    height: 96%;
+}
+
+#messages {
+    list-style-type: none;
+    position: relative;
+}
+
+#messages li span.author {
+    display: inline-block;
+}
+
+#messages li p.content {
+    display: inline-block;
+}
+
+section#connection form {
+    display: block;
+    margin: 25px 0 0 0;
+    position: absolute;
+}
+
+#username {
+    border: 1px solid black;
+    height: 25px;
+    transition: 0.3s ease all;
+    border-radius: 3px;
+}
+
+#username:hover {
+    border: 1px solid grey;
+    background-color: #ffe;
+}
+
+#username:focus {
+    border: 1px solid transparent;
+    box-shadow: -1px -1px 2px black, 1px 1px 2px black;
+    outline-width: 0;
+}
+
+#submit {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 30px;
+}

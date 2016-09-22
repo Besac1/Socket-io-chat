@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Chat socket io</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section id="mainpage">
-        <h1>Super chat</h1>
-        <div id="chat">
-            <ul id="messages"></ul>
-            <form action="">
-                <input id="messageContent" autocomplete="off" placeholder="Message" />
-                <button>Send</button>
-            </form>
-        </div>
-    </section>
-    <section id="connection">
-        <form action="">
-            <label for="uername">Username</label>
-            <input id="username" autocomplete="off" autofocus />
-            <input type="submit" value="Send" name="submit" />
-      </form>
-    </section>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
-</body>
+
+    <head>
+
+        <title>
+
+            Chat socket io
+
+        </title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+
+        <section id="page">
+
+            <div id="header">
+                
+                    <h1>Super chat</h1>
+            
+            </div>
+
+            <div id="container">
+
+                <section id="mainpage">
+
+                    <div id="chat">
+
+                        <div id="messageWrapper">
+
+                            <ul id="messages"></ul>
+                        
+                        </div>
+
+                        <form action="">
+
+                            <input id="messageContent" autocomplete="off" placeholder="Message" />
+
+                        </form>
+
+                    </div>
+
+                </section>
+                <section id="connection">
+
+                    <form action="">
+
+                        <label for="uername">Please choose a username : </label>
+                        <input id="username" autocomplete="off" autofocus />
+                        <input type="submit" value="Send" id="submit" name="submit" />
+                  
+                    </form>
+
+                </section>
+
+            </div>
+
+        </section>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
+
+    </body>
+
 </html>
