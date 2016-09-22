@@ -41,17 +41,23 @@ $('#chat form').submit(function(e) {
 //___________
 
 //RECEIVEMESSAGE
-socket.on('receiveMessage', function (message) {
 
-    $('#messages').append('<li><p><span class="author">'+message.username+': </span> '+message.content+'</p></li>');
+function scrollMessagesToBottom () {
+    
     var heightToScroll = parseFloat($('#messages').css('height')),
         wrapperHeight = parseFloat($('#messageWrapper').css('height'));
-
     if (heightToScroll > wrapperHeight) {
 
         $('#messageWrapper').animate({ scrollTop: heightToScroll }, 1)
     
     }
+
+};
+
+socket.on('receiveMessage', function (message) {
+
+    $('#messages').append('<li><p><span class="author">'+message.username+': </span> '+message.content+'</p></li>');
+    scrollMessagesToBottom();
 
 });
 
@@ -59,6 +65,7 @@ socket.on('receiveMessage', function (message) {
 socket.on('receiveInfoMessage', function (message) {
 
     $('#messages').append('<li class="infoMessage"><p><span class="author">'+message.username+': </span> '+message.content+'</p></li>');
+    scrollMessagesToBottom();
 
 });
 //--------------
